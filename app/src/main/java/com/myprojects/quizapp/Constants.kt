@@ -13,7 +13,7 @@ object Constants {
             "India",
             "Japan",
             "Pakistan",
-            "India"
+            2
         )
 
         val question2 = Question(
@@ -24,7 +24,7 @@ object Constants {
             "Argentina",
             "Japan",
             "Pakistan",
-            "Argentina"
+            2
         )
 
         val question3 = Question(
@@ -35,7 +35,7 @@ object Constants {
             "India",
             "Japan",
             "Pakistan",
-            "Australia"
+            1
         )
 
         val question4 = Question(
@@ -46,7 +46,7 @@ object Constants {
             "India",
             "Japan",
             "Belgium",
-            "Belgium"
+            4
         )
 
         val question5 = Question(
@@ -57,7 +57,7 @@ object Constants {
             "India",
             "Japan",
             "Brazil",
-            "Brazil"
+            4
         )
 
         val question6 = Question(
@@ -68,7 +68,7 @@ object Constants {
             "India",
             "Japan",
             "Denmark",
-            "Denmark"
+            4
         )
 
         val question7 = Question(
@@ -79,7 +79,7 @@ object Constants {
             "Fiji",
             "Japan",
             "Pakistan",
-            "Fiji"
+            2
         )
 
         val question8 = Question(
@@ -90,7 +90,7 @@ object Constants {
             "India",
             "Germany",
             "Pakistan",
-            "Germany"
+            3
         )
 
         val question9 = Question(
@@ -101,7 +101,7 @@ object Constants {
             "India",
             "Japan",
             "Pakistan",
-            "Kuwait"
+            1
         )
 
         val question10 = Question(
@@ -112,7 +112,7 @@ object Constants {
             "India",
             "Japan",
             "New Zealand",
-            "New Zealand"
+            4
         )
 
         questions.add(question1)
