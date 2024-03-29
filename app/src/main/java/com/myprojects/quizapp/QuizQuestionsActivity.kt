@@ -60,12 +60,13 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
         val question = mQuestionList!![mCurrentPosition - 1]
         questionView?.text = question.question
         imageView?.setImageResource(question.image)
+        tvProgress?.progress = mCurrentPosition
         progressText?.text = "$mCurrentPosition/10"
         option1?.text = question.option1
         option2?.text = question.option2
         option3?.text = question.option3
         option4?.text = question.option4
-        mCurrentPosition++
+//        mCurrentPosition++
     }
 
     private fun defaultOptionView() {
