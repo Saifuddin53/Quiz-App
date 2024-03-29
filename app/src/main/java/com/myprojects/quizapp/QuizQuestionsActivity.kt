@@ -1,6 +1,7 @@
 package com.myprojects.quizapp
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import android.os.Bundle
@@ -13,6 +14,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.core.content.ContextCompat
 
 class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
+
+    private var mUserName: String? = null
+    private var mCorrectAnswers: Int = 0
 
     private var mCurrentPosition: Int = 1
     private var mQuestionList: ArrayList<Question>? = null
@@ -29,10 +33,12 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
     private var option3: TextView? = null
     private var option4: TextView? = null
 
-    @SuppressLint("CutPasteId")
+    @SuppressLint("CutPasteId", "MissingInflatedId")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_questions)
+
+        mUserName = intent.getStringExtra(Constants.USER_NAME)
 
         tvProgress = findViewById(R.id.progressBar)
         progressText = findViewById(R.id.text_progress)
@@ -141,11 +147,21 @@ class QuizQuestionsActivity : AppCompatActivity(), View.OnClickListener {
                         mCurrentPosition <= mQuestionList!!.size -> {
                             setQuestion()
                         }
+                        else -> {
+                            val intent = Intent(this, ResultActivity::class.java)
+                            intent.putExtra(Constants.USER_NAME, mUserName)
+                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionList?.size)
+                            startActivity(intent)
+                            finish()
+                        }
                     }
                 } else {
                     val question = mQuestionList?.get(mCurrentPosition - 1)
                     if (question!!.correctAnswer != mOptionSelected) {
                         answerView(mOptionSelected, R.drawable.wrong_option_border_bg)
+                    }else {
+                        mCorrectAnswers++
                     }
                     answerView(question.correctAnswer, R.drawable.correct_option_border_bg)
                 }
