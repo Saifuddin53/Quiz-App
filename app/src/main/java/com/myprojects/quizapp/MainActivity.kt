@@ -18,6 +18,7 @@ class MainActivity : AppCompatActivity() {
         val etText: EditText = findViewById(R.id.editText)
 
         startButton.setOnClickListener {
+            //codespace check
             if(etText.text.isEmpty()) {
                 Toast.makeText(
                     this,
